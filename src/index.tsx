@@ -1,23 +1,40 @@
-import React from 'react';
-import { createRoot } from 'react-dom/client';
-import { Provider } from 'react-redux';
-import { store } from './app/store';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import './index.css';
+import React from "react";
+import { createRoot } from "react-dom/client";
+import { Provider } from "react-redux";
 
-const container = document.getElementById('root')!;
+import { store } from "./app/store";
+
+import {
+  ChakraProvider,
+  createStandaloneToast,
+  extendTheme,
+} from "@chakra-ui/react";
+
+import App from "./App";
+import { listTheme } from "./theme/components/List";
+
+import "./index.css";
+
+const { ToastContainer } = createStandaloneToast();
+
+const container = document.getElementById("root")!;
 const root = createRoot(container);
+
+const theme = extendTheme({
+  components: { List: listTheme },
+  fonts: {
+    heading: `'Open Sans', sans-serif`,
+    body: `'Raleway', sans-serif`,
+  },
+});
 
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <ChakraProvider theme={theme}>
+        <App />
+        <ToastContainer />
+      </ChakraProvider>
     </Provider>
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
