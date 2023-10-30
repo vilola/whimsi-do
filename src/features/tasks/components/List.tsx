@@ -1,7 +1,9 @@
 import { Flex, List, Spinner } from "@chakra-ui/react";
+
 import { useGetTasksQuery } from "../../../app/services/tasksApi";
-import { TaskItem } from "./Item";
 import { TasksResponse } from "../../types";
+
+import { TaskItem } from "./Item";
 
 type Props = {
   tasks?: TasksResponse;
@@ -23,8 +25,8 @@ export const TasksList = ({ tasks }: Props) => {
 
   return (
     <List variant="custom" spacing={3}>
-      {tasks.map((task, index) => (
-        <TaskItem key={index} {...task} />
+      {tasks.map((task) => (
+        <TaskItem key={task.id} {...task} />
       ))}
     </List>
   );
