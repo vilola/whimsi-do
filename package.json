@@ -13,7 +13,11 @@
   "scripts": {
     "start": "concurrently \"yarn start:FE\" \"yarn start:BE\"",
     "start:FE": "yarn workspace whimsi-fe start",
-    "start:BE": "yarn workspace whimsi-be start"
+    "start:BE": "yarn workspace whimsi-be start",
+
+    "setup": "yarn install && yarn install:FE && yarn install:BE",
+    "install:FE": "yarn workspace whimsi-fe install",
+    "install:BE": "yarn workspace whimsi-be install"
   },
   "devDependencies": {
     "concurrently": "^8.2.2"
