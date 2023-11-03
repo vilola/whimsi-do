@@ -1,0 +1,21 @@
+{
+  "private": "true",
+  "name": "whimsi-do",
+  "version": "1.0.0",
+  "description": "A little todo app to show my React, Redux and TS skills. ",
+  "author": "Viola Kosikova",
+  "main": "index.js",
+  "license": "MIT",
+  "workspaces": [
+    "whimsi-be",
+    "whimsi-fe"
+  ],
+  "scripts": {
+    "start": "concurrently \"yarn start:FE\" \"yarn start:BE\"",
+    "start:FE": "yarn workspace whimsi-fe start",
+    "start:BE": "yarn workspace whimsi-be start"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
