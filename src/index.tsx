@@ -7,26 +7,18 @@ import { store } from "./app/store";
 import {
   ChakraProvider,
   createStandaloneToast,
-  extendTheme,
 } from "@chakra-ui/react";
 
 import App from "./App";
-import { listTheme } from "./theme/components/List";
 
 import "./index.css";
 
-const { ToastContainer } = createStandaloneToast();
+import { theme } from "./theme";
 
 const container = document.getElementById("root")!;
 const root = createRoot(container);
 
-const theme = extendTheme({
-  components: { List: listTheme },
-  fonts: {
-    heading: `'Open Sans', sans-serif`,
-    body: `'Raleway', sans-serif`,
-  },
-});
+const { ToastContainer } = createStandaloneToast();
 
 root.render(
   <React.StrictMode>
