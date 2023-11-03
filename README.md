@@ -2,7 +2,7 @@
 
 ## Monorepo Application
 
-This project was created to showcase my skills in React, Redux, and TypeScript. It consists of a frontend and a backend, both of which are contained in their respective folders.
+This project is a comprehensive demonstration of my proficiency in React, Redux, and TypeScript. It is structured as a monorepo, comprising a frontend and a backend, each encapsulated in its own dedicated folder.
 
 ## Available Scripts
 
